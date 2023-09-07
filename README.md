@@ -94,8 +94,9 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 
 ### Built With
-
-* [![PyTorch][https://img.shields.io/badge/PyTorch-EE4C2C.svg]][https://pytorch.org/]
+* [!Lightly]()](https://docs.lightly.ai/self-supervised-learning/)
+* [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C.svg)](https://pytorch.org/)
+* [![Python Version](https://img.shields.io/badge/python-3.5%20|%203.6%20|%203.7%20|%203.8-blue.svg)](https://www.python.org/)
 * [![React][React.js]][React-url]
 * [![Vue][Vue.js]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
@@ -111,7 +112,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
+To configure the active learner. This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
@@ -247,3 +248,19 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+
+
+## Notes
+- [ ] [Setting up delegated access to AWS S3 bucket using IAM roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)
+Delegated Access to the AWS S3 bucket is important to enable teams to share resources/data one S3 bucket with users in different teams with different IAM roles. Set up cross-access account with AWS account, role type, and account ID to "Trust Relationship"
+- 1. Create a role in the "Production Account" as a JSON file with `Action` permissions for the resource (s3 bucket) in question.
+  - a. Specify the AWS Account role type
+  - b. Label the account ID to reflect `DEV` or role of choice
+  - c. Create the `Trust Relationship`
+- 2. Create a policy in the "Development Account"
+  - a. Modify the Developers user group to allow them to switch to the UpdateApp role
+- 3. Create a policy in the "Testers User Group"
+  - a. Modify the Testers user group to deny UpdateApp role permissions
+
+
+- [ ] [Setting up Lightly Dataset Using AWS DElegated Access (Advised)](https://docs.lightly.ai/docs/aws-s3)
