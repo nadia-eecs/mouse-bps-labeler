@@ -95,4 +95,25 @@ def save_tiffs_local_from_s3(
     for s3_file_path in tqdm(s3_file_paths):
         s3_file_path_full = f"{s3_path}/{s3_file_path}"
         get_file_from_s3(s3_client, bucket_name, s3_file_path_full, save_file_path)
+        
+def copy_s3_to_s3_directory_files(source_bucket: str, dest_bucket: str, dir_name: str) -> None:
+    """
+    This function copies an object from one s3 bucket to another s3 bucket.
+    args:
+        source_bucket (str): name of source bucket
+        dest_bucket (str): name of destination bucket
+        file_name (str): name of file to copy
+    returns:
+        None
+    """
+    s3 = boto3.resource('s3')
+    source_bucket = s3.Bucket(source_bucket)
+    dest_bucket = s3.Bucket(dest_bucket)
+    for obj in source_bucket.objects.filter(Prefix = dir_name):
+        # Extract file name from object key
+        file_name = obj.key.split('/')[-1]
+
+        # Copy object to destination bucket with the same name
+        dest_bucket.copy({'Bucket': source_bucket, 'Key': obj.key}, file_name)
+
 
