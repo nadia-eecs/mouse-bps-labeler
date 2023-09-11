@@ -96,24 +96,28 @@ def save_tiffs_local_from_s3(
         s3_file_path_full = f"{s3_path}/{s3_file_path}"
         get_file_from_s3(s3_client, bucket_name, s3_file_path_full, save_file_path)
         
-def copy_s3_to_s3_directory_files(source_bucket: str, dest_bucket: str, dir_name: str) -> None:
+def copy_s3_to_s3_directory_files(source_bucket: str, dest_bucket: str, source_dir_name: str) -> None:
     """
     This function copies an object from one s3 bucket to another s3 bucket.
     args:
         source_bucket (str): name of source bucket
         dest_bucket (str): name of destination bucket
-        file_name (str): name of file to copy
+        source_dir_name (str): name of source directory
     returns:
         None
     """
-    s3 = boto3.resource('s3')
+    print(f'Copying files from {source_bucket}/{source_dir_name} to {dest_bucket}')
+    s3 = boto3.resource('s3', config=Config(signature_version=UNSIGNED))
     source_bucket = s3.Bucket(source_bucket)
     dest_bucket = s3.Bucket(dest_bucket)
-    for obj in source_bucket.objects.filter(Prefix = dir_name):
-        # Extract file name from object key
-        file_name = obj.key.split('/')[-1]
+    
+    for obj in source_bucket.objects.filter(Prefix = f'{source_dir_name}/'):
+        file_key = obj.key
+        dest_key = file_key.replace(f'{source_dir_name}/', '') # remove source directory from destination key
+        dest_path_key = f'{dest_bucket.name}/{dest_key}'
+        print(f'Copying {file_key} to {dest_path_key}')
 
         # Copy object to destination bucket with the same name
-        dest_bucket.copy({'Bucket': source_bucket, 'Key': obj.key}, file_name)
+        dest_bucket.copy({'Bucket': source_bucket, 'Key': file_key}, dest_path_key)
 
 

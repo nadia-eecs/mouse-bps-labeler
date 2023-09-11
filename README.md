@@ -251,6 +251,17 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 
 ## Notes
+### Copying Files between s3 Buckets in Two Different Accounts Using `boto3`
+The following is summarized from this stackoverflow [thread](https://stackoverflow.com/questions/56380673/how-to-copy-files-between-s3-buckets-in-2-different-accounts-using-boto3).
+To copy between buckets that belong to different AWS accounts, you need touse a single set of credentials to have:
+ - `GetObject` permission on the source bucket
+ - `PutObject` permission on the destination bucket
+
+The `CopyObject()` command is sent to the destination allowing it to pull the object from the source.
+
+To be able to copy objects you need to use a set of credentials from the Destination account bucket that has permission to read from the Source account bucket. This will require the owner of the Source account bucket to modify the bucket policy to allow the Destination bucket to do this. The alternative is to manually download the files locally and reupload them separately to the destination bucket :frowning:.
+
+
 - [ ] [Setting up delegated access to AWS S3 bucket using IAM roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)
 Delegated Access to the AWS S3 bucket is important to enable teams to share resources/data one S3 bucket with users in different teams with different IAM roles. Set up cross-access account with AWS account, role type, and account ID to "Trust Relationship"
 - 1. Create a role in the "Production Account" as a JSON file with `Action` permissions for the resource (s3 bucket) in question.
@@ -263,4 +274,40 @@ Delegated Access to the AWS S3 bucket is important to enable teams to share reso
   - a. Modify the Testers user group to deny UpdateApp role permissions
 
 
-- [ ] [Setting up Lightly Dataset Using AWS DElegated Access (Advised)](https://docs.lightly.ai/docs/aws-s3)
+- [ ] [Setting up Lightly Dataset Using AWS Delegated Access (Advised)](https://docs.lightly.ai/docs/aws-s3)
+
+### Providing Data To Lightly Via Cloud Storage
+#### Creating a Lightly Dataset
+Datasources enable Lightly to access data in the cloud. They need to be configured with credentials. To create a datasource you must specify a dataset, the credentials, and a `resource_path` which must point to a directory within the storage bucket.
+
+A Lightly Dataset can support the following image file types:
+
+- `png`
+- `jpeg`
+- `bmp`
+- `gif`
+- `tiff`
+#### Input Datasource
+The input datasource is the raw input that Lightly reads. Lightly requires *list* and *read* access.
+
+##### Configuring a Remote Datasource AWS S3 Edition
+Lighly needs to have `read`, `list`, `write`, and `delete` permissions:
+- `s3:GetObject` (if read only)
+- `s3:ListBucket` (if read only)
+- `s3:PutObject`
+- `s3:DeleteObject`
+##### Delegated Access:
+Identify Lightly as a user with a role int he AWS account. Use this if internal or external policies require it and if security and compliance are important.
+
+- 1. Log into AWS IAM Console
+- 2. Create Role
+- 3. Select AWS Account and configure ID and Access Policy for ![Lightly](https://docs.lightly.ai/docs/aws-s3).
+- ARN for `ai4ls-bps-training-data`: 
+- `arn:aws:iam::607473046743:policy/Lightly-S3-Integration`
+
+#### Lightly Datasource
+Th Lightly bucket is an interactive bucket where Lightly can read things from and also write to. Lightly needs `list`, `read`, and `write` access to the Lightly bucket. Lightly bucket holds:
+- image thumbnails
+- filenames
+- predictons
+- metadata
