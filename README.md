@@ -94,7 +94,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 
 ### Built With
-* [!Lightly]()](https://docs.lightly.ai/self-supervised-learning/)
+* [![Lightly](Lightly)](https://docs.lightly.ai/self-supervised-learning/)
 * [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C.svg)](https://pytorch.org/)
 * [![Python Version](https://img.shields.io/badge/python-3.5%20|%203.6%20|%203.7%20|%203.8-blue.svg)](https://www.python.org/)
 * [![React][React.js]][React-url]
@@ -311,3 +311,5 @@ Th Lightly bucket is an interactive bucket where Lightly can read things from an
 - filenames
 - predictons
 - metadata
+
+# Pr
