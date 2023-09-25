@@ -216,7 +216,7 @@ python bps_labeler/scripts/b_label_first_selection/03_run_first_selection.py
 ```
 
 In this script, Lightly Worker first creates a dataset named `nasa-bps-microscopy` within the Lightly Platform, selects 50 samples based on embeddings of the training samples and particle type metadata and records them in this dataset. It does this to ensure diverse sampling and balance respectively. These 50 samples are the ones that we are going to label in the first round. You can see the selected samples in the [Web App](https://app.lightly.ai/).
-
+![First selection thumbnails](tutorial/images/lightly-first-50-thumbnails.png)
 ![First selection.](tutorial/images/lightly_bps_first_50_tsne.png)
 
 ## 3. Label the selected samples to train a classifier
