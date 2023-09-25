@@ -1,3 +1,7 @@
+""" Dataset class and DataModule class for BPSTracks data output of Label Studio annotations.
+@Author: Nadia Ahmed
+"""
+
 import os
 import pytorch_lightning as pl
 import torch

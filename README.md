@@ -61,12 +61,14 @@ Lighly needs to have `read`, `list`, `write`, and `delete` permissions:
 - `s3:ListBucket` (if read only)
 - `s3:PutObject`
 - `s3:DeleteObject`
+
+For detailed documentation see ![AWS S3 Lightly Documentation](https://docs.lightly.ai/docs/aws-s3)
 ##### Delegated Access:
 Identify Lightly as a user with a role int he AWS account. Use this if internal or external policies require it and if security and compliance are important.
 
 - 1. Log into AWS IAM Console
 - 2. Create Role
-- 3. Select AWS Account and configure ID and Access Policy for ![Lightly](https://docs.lightly.ai/docs/aws-s3).
+- 3. Select AWS Account and configure ID and Access Policy for Lightly.
 
 ## 1. Prepare data
 We want to train a classifier to predict whether the microscopy image contains a linear arrangement of 53BP1 accumulation on chromatin surrounding DNA damage,

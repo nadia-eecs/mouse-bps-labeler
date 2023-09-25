@@ -1,3 +1,6 @@
+""" ResNet-50 transfer learned model for active learning with new labels from Label Studio.
+@author Nadia Ahmed
+"""
 import datetime
 import gc
 from typing import List, Tuple, Mapping

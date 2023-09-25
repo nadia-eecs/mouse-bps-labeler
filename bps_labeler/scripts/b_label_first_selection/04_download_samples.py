@@ -1,3 +1,7 @@
+""" Download samples from Lightly for labeling.
+@Author: Nadia Ahmed
+adapted from https://github.com/lightly-ai/Lightly_LabelStudio_AL
+"""
 import pyprojroot
 root = pyprojroot.find_root(pyprojroot.has_dir(".git"))
 import os

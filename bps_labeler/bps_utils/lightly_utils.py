@@ -1,3 +1,7 @@
+""" Lightly utilities for interacting with the Lightly API.
+@author Nadia Ahmed
+"""
+
 import pyprojroot
 import os
 import requests

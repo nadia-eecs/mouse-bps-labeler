@@ -9,6 +9,7 @@ metadata files. The training set will have images that will be used to train
 the model after labeling. The validation set will be used to evaluate the
 model's performance. It is also unlabelled but we'd like to hold it out for
 evaluation.
+@Author: Nadia Ahmed
 """
 
 import pyprojroot

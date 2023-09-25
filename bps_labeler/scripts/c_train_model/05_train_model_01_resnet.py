@@ -1,3 +1,8 @@
+""" Train ResNet50 model on BPS Tracks dataset and save model predictions to resample unlabeled data for active learning
+through the Lightly API.
+@Author: Nadia Ahmed
+Adapted from https://github.com/lightly-ai/Lightly_LabelStudio_AL
+"""
 import os
 import sys
 import pyprojroot

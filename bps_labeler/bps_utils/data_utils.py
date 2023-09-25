@@ -1,6 +1,6 @@
 """Data utilities for the BPS Labeler project.
 @author Nadia Ahmed
-setup_data, dump_lightly_predictions, and generate_lightly_schema_json are based off of the work of Igor Susmelj
+setup_data, dump_lightly_predictions, and generate_lightly_schema_json are based off of the work of @author Igor Susmelj
 """
 import csv
 import json

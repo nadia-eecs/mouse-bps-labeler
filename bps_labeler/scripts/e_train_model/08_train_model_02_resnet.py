@@ -1,3 +1,6 @@
+""" Retrain ResNet50 model on additionally labeled BPS Tracks dataset to see loss behavior.
+@Author: Nadia Ahmed
+"""
 import os
 import sys
 import pyprojroot

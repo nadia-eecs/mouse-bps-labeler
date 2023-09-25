@@ -1,3 +1,6 @@
+""" Utilities for reading LabelStudio output files.
+Taken from https://github.com/lightly-ai/Lightly_LabelStudio_AL
+"""
 import json
 import os
 import pathlib

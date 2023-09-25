@@ -3,6 +3,7 @@ This module creates and configures a dataset on Lightly.
 In this code we assume that the AWS bucket contains two directories:
 - lightly: where Lightly will read and write data for use with the Lightly platform
 - data: where the raw data is stored
+@Author Nadia Ahmed
 """
 from dotenv import load_dotenv
 from lightly.api import ApiWorkflowClient
