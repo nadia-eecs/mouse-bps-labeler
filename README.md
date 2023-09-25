@@ -71,6 +71,17 @@ Identify Lightly as a user with a role int he AWS account. Use this if internal 
 - 2. Create Role
 - 3. Select AWS Account and configure ID and Access Policy for Lightly.
 
+##### API Key Best Practices (Optional)
+The code in this repository is such that all keys are recommended to be placed in a `.env` file at the same location as the `.git` to be ignored with `.gitignore`. The format of the `.env` file is as follows:
+
+```
+MY_LIGHTLY_TOKEN=<token>
+LIGHTLY_WORKER_ID=<id>
+S3_REGION=<s3 region>
+S3_ROLE_ARN=<s3 arn>
+S3_EXTERNAL_ID=<s3 external id>
+...
+```
 ## 1. Prepare data
 We want to train a classifier to predict whether the microscopy image contains a linear arrangement of 53BP1 accumulation on chromatin surrounding DNA damage,
 or irradiation induced foci. We use this dataset: [Biological and Physical Sciences (BPS) Microscopy Benchmark Training Dataset](https://aws.amazon.com/marketplace/pp/prodview-6eq625wnwk4b6#overview).
