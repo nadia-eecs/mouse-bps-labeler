@@ -3,7 +3,13 @@ data/
 data_Gyhi_4hr/
 .vscode
 .env
-
+lightly_predictions/
+lightning_logs/
+wandb/
+model_weights/
+bps_labeler/scripts/c_train_model/testing_dump_lightly_predictions.py
+TODO.md
+2023092505_train.json
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
