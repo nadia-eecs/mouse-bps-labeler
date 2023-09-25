@@ -1,0 +1,13 @@
+{
+    "task_type": "classification",
+    "categories": [
+        {
+            "id": 0,
+            "name": "track"
+        },
+        {
+            "id": 1,
+            "name": "no track"
+        }
+    ]
+}
