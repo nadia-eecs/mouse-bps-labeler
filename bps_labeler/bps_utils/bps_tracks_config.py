@@ -1,3 +1,6 @@
+""" Configuration options for BPSTracks data retrieved from Label Studio.
+@author Nadia Ahmed
+"""
 import os
 import sys
 import pyprojroot
