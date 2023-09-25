@@ -62,7 +62,7 @@ Lighly needs to have `read`, `list`, `write`, and `delete` permissions:
 - `s3:PutObject`
 - `s3:DeleteObject`
 
-For detailed documentation see ![AWS S3 Lightly Documentation](https://docs.lightly.ai/docs/aws-s3)
+For detailed documentation see [AWS S3 Lightly Documentation](https://docs.lightly.ai/docs/aws-s3)
 ##### Delegated Access:
 Identify Lightly as a user with a role int he AWS account. Use this if internal or external policies require it and if security and compliance are important.
 
