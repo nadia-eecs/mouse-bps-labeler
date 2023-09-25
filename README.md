@@ -17,7 +17,8 @@ This repository demonstrates a complete workflow of training a machine learning 
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg?style=flat-square)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 [![Contributors](https://img.shields.io/github/contributors/github_username/repo_name.svg?style=flat-square)](https://github.com/nadia-eecs)
 
-
+## Why is Active Learning?
+Labeling data is expensive! We can make the task easier by utilizing Active Learning to select a subset of unlabeled data to be labeled and then used to train a model. By selecting well, the model can have similar or better performance than if trained on the entire dataset. [lightly.ai blog post](https://www.lightly.ai/post/active-learning-method-overview)
 
 Assume we have a new unlabelled dataset and want to train a new model. We do not want to label all samples because not all of them are valuable. Lightly can help select a good subset of samples to kick off labeling and model training. The loop is as follows:
 
@@ -202,7 +203,7 @@ s3://bucket/
 ### 2.1 Start the Lightly Worker in Docker
 To setup the Lightly Worker on your machine run the following script:
 ```sh 
-./bps_labeler/label_first_batch/03_start_lightly_worker.sh
+./bps_labeler/scripts/b_label_first_selection/03_start_lightly_worker.sh
 ```
 
 
