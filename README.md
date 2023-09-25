@@ -3,6 +3,7 @@
 - Author: @nadia-eecs
 - Acknowledgements & Appreciation To: @igorsusmelj
 
+
 This repository demonstrates a complete workflow of training a machine learning model with the aid of Active Learning using [Lightly](https://www.lightly.ai) and [Label Studio](https://labelstud.io) and has been adapted heavily (esp. this README.md) from [Lightly_LabelStudio_AL](https://github.com/lightly-ai/Lightly_LabelStudio_AL/tree/main).
 
 ## Built With
