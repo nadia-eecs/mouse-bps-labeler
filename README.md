@@ -400,9 +400,9 @@ To import new samples, go to `Settings` -> `Cloud Storage` and then click `Sync 
 Then, you can go back to the project page and label the new samples. After finishing annotating the samples, export the annotations again. Rename the file to `annotation-2.json` and place that in the root directory of this repository.
 
 ## 6. Train a new model with the new samples
-Very similar to the script in step 4, script [train_model_2.py](source/train_model_2.py) loads samples from `annotation-2.json` and trains the classification model again with all 60 labeled samples now.
+Very similar to the script in step 4, script [08_train_model_02_resnet.py](bps_labeler/scripts/e_train_model/08_train_model_02_resnet.py) loads samples from `annotation-2.json` and trains the classification model again with all 60 labeled samples now.
 
 ```sh
-python bps_labeler/train_model/train_model_02.py
+python bps_labeler/e_train_model/08_train_model_02_resnet.py
 ```
 ## Celebrate! You've improved your model with the help of Label Studio and Lightly! 
